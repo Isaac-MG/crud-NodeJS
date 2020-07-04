@@ -11,6 +11,8 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 4040;
 
+const userRoutes = require('./src/routes/user.routes');
+
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 
@@ -36,3 +38,5 @@ app.listen(port, () => {
     //Mostramos el mensaje en color verde y mostramos el puerto usado
     console.log(success(`El servidor esta escuchando por el puerto ${port}`))
 })
+
+app.use('/api/users', userRoutes)
