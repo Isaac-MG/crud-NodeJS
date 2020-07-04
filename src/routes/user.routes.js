@@ -17,6 +17,6 @@ router.get('/:id', userController.findOne);
 router.put('/:id', userController.update);
 
 //Borrra un usuario
-router.delete('/:id', userController.delete);
+router.delete('/:id', userController.remove);
 
 module.exports = router;
